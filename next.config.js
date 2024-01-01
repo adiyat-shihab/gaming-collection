@@ -1,10 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   env: {
-    API_KEY: "9a9fc09e41754876b755335519ed6682",
+    API_KEY: process.env.API_KEY,
   },
   images: {
-    domains: ["i.ibb.co"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "i.ibb.co",
+      },
+      {
+        protocol: "https",
+        hostname: "media.rawg.io",
+      },
+    ],
   },
 };
 

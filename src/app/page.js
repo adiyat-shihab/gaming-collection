@@ -1,18 +1,17 @@
 import Navbar from "@/app/component/Navbar";
+import NewRelease from "@/app/component/NewRelese";
+import BottomNavigation from "@/app/component/BottomNavigation";
 
 export default async function Home() {
   return (
     <>
       <div>
         <Navbar />
+        <NewRelease />
+        <div className={"relative"}>
+          <BottomNavigation />
+        </div>
       </div>
     </>
   );
 }
-
-const getData = async () => {
-  const data = await fetch(
-    `https://api.rawg.io/api/games?key=${process.env.API_KEY}`,
-  );
-  return data.json();
-};
